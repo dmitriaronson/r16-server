@@ -1,13 +1,15 @@
 import mongoose from 'mongoose';
+import Track from './Track';
 
 const Schema = mongoose.Schema;
 
 const schema = new Schema({
+  id: String,
   title: String,
   author: String,
   description: String,
-  tracks: [{ url: String, date: Date }],
   date: { type: Date, default: Date.now },
+  tracks: [Track.schema],
 });
 
 const Playlist = mongoose.model('Playlist', schema);
