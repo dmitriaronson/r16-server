@@ -4,7 +4,7 @@ import Track from './Track';
 const Schema = mongoose.Schema;
 
 const schema = new Schema({
-  id: String,
+  id: { type: String, index: { unique: true } },
   title: String,
   author: String,
   description: String,
