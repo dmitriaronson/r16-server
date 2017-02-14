@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "boom": "^4.2.0",
+    "isomorphic-fetch": "^2.2.1",
     "joi": "^10.2.2",
     "koa": "next",
     "koa-bodyparser": "next",
