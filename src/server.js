@@ -6,8 +6,9 @@ import convert from 'koa-convert';
 import bodyparser from 'koa-bodyparser';
 import MongoStore from 'koa-generic-session-mongo';
 import logger from './lib/services/logger';
-import mainRouter from './routes/mainRouter';
+import mainRoutes from './routes/mainRoutes';
 import authRoutes from './routes/authRoutes';
+import searchRoutes from './routes/searchRoutes';
 import playlistRoutes from './routes/playlistRoutes';
 
 const ENV = process.env.NODE_ENV || 'development';
@@ -25,8 +26,9 @@ app.use(convert(session({
 app.use(bodyparser());
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(mainRouter.routes());
+app.use(mainRoutes.routes());
 app.use(authRoutes.routes());
+app.use(searchRoutes.routes());
 app.use(playlistRoutes.routes());
 
 require('./config/auth');

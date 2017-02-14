@@ -4,5 +4,7 @@
   "SESSION_SECRET": "secret",
   "GOOGLE_CLIENT_ID": "553028959982-inad18enhrh0sunnslagago03115nppf.apps.googleusercontent.com",
   "GOOGLE_CLIENT_SECRET": "8d9CXSNgJ2kj5qEwLfRfPJSl",
+  "SOUNDCLOUD_CLIENT_ID": "b2ebd9a26319cdf13d1d61b617df94d3",
+  "SOUNDCLOUD_CLIENT_SECRET": "00f8ab5b9e13af5cba26d901f75717c8",
   "DB_URI": "mongodb://127.0.0.1:27017"
 }
