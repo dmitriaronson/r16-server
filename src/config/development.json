@@ -1,0 +1,8 @@
+{
+  "APP_HOST": "http://localhost:3000",
+  "PORT": 3000,
+  "SESSION_SECRET": "secret",
+  "GOOGLE_CLIENT_ID": "553028959982-inad18enhrh0sunnslagago03115nppf.apps.googleusercontent.com",
+  "GOOGLE_CLIENT_SECRET": "8d9CXSNgJ2kj5qEwLfRfPJSl",
+  "DB_URI": "mongodb://127.0.0.1:27017"
+}
