@@ -1,11 +1,14 @@
 import Router from 'koa-router';
 import uuid from 'uuid';
 import Boom from 'boom';
+import passport from 'koa-passport';
 import Playlist from '../lib/models/Playlist';
 import { validatePlaylist } from '../lib/services/validate';
 import logger from '../lib/services/logger';
 
 const router = new Router({ prefix: '/api/playlist' });
+
+router.use(passport.authenticate('jwt', { session: false }));
 
 router.get('/', async (ctx) => {
   const playlists = await Playlist.find({});
