@@ -1,5 +1,6 @@
 import Koa from 'koa';
 import Router from 'koa-router';
+import serve from 'koa-static';
 import bodyparser from 'koa-bodyparser';
 import Boom from 'boom';
 import logger from './lib/services/logger';
@@ -10,6 +11,8 @@ import constant from './config/constants';
 const PORT = constant('PORT');
 const app = new Koa();
 const router = new Router();
+
+app.use(serve(`${__dirname}/public`));
 
 router.get('/pattern/:id', async (ctx) => {
   try {
