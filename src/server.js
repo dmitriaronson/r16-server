@@ -18,12 +18,14 @@ router.get('/pattern/:id', async (ctx) => {
   try {
     const result = await Pattern.findOne({ id: ctx.params.id });
     let pattern = [];
+    let tempo = null;
 
     if (result) {
       pattern = result.pattern;
+      tempo = result.tempo;
     }
 
-    ctx.body = { data: pattern };
+    ctx.body = { data: { channels: pattern, tempo } };
   } catch (error) {
     ctx.status = 400;
     ctx.body = Boom.badRequest(error.message).output;
@@ -33,7 +35,8 @@ router.get('/pattern/:id', async (ctx) => {
 router.post('/pattern', async (ctx) => {
   try {
     const body = ctx.request.body.data;
-    const pattern = new Pattern({ id: id(), pattern: body });
+    const { channels, tempo } = body;
+    const pattern = new Pattern({ id: id(), tempo, pattern: channels });
 
     await pattern.save();
 
