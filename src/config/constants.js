@@ -4,7 +4,7 @@ const constants = {
     DB_URI: 'mongodb://127.0.0.1:27017',
   },
   production: {
-    port: 8081,
+    PORT: 8081,
     DB_URI: 'mongodb://127.0.0.1:27017',
   },
 };
