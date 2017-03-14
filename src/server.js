@@ -1,6 +1,7 @@
 import Koa from 'koa';
 import Router from 'koa-router';
 import serve from 'koa-static';
+import send from 'koa-send';
 import bodyparser from 'koa-bodyparser';
 import Boom from 'boom';
 import logger from './lib/services/logger';
@@ -45,6 +46,10 @@ router.post('/pattern', async (ctx) => {
     ctx.status = 400;
     ctx.body = Boom.badRequest(error.message).output;
   }
+});
+
+router.get('*', async (ctx) => {
+  await send(ctx, 'index.html', { root: `${__dirname}/public` });
 });
 
 app.use(bodyparser());

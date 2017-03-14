@@ -16,6 +16,7 @@
     "koa": "next",
     "koa-bodyparser": "next",
     "koa-router": "next",
+    "koa-send": "^3.3.0",
     "koa-static": "^3.0.0",
     "mongoose": "^4.8.2",
     "winston": "^2.3.1"
