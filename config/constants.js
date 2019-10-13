@@ -4,12 +4,12 @@ const constants = {
     DB_URI: 'mongodb://127.0.0.1:27017',
   },
   production: {
-    PORT: 8081,
-    DB_URI: 'mongodb://127.0.0.1:27017',
+    PORT: 8080,
+    DB_URI: 'mongodb://mongo:27017/patterns',
   },
 };
 
-export default (key) => {
+module.exports = (key) => {
   const ENV = process.env.NODE_ENV || 'development';
   const config = constants[ENV];
 
